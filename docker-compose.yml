@@ -1,4 +1,3 @@
-version: "3"
 services:
   signal-cli-rest-api:
     image: snorcup/signal-cli-rest-api:latest
