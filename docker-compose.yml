@@ -5,18 +5,12 @@ services:
     image: bbernhard/signal-cli-rest-api:latest
     container_name: signal-cli
     restart: unless-stopped
+    ports:
+      - "8085:8080"
     volumes:
       - signal_cli_data:/home/.local/share/signal-cli
     environment:
       - MODE=json-rpc
-    networks:
-      - traefik
-    lables:
-      - "traefik.enable=true"
-      - "traefik.http.routers.signal.rule=Host(`signal.51fifty.io`)"
-      - "traefik.http.routers.signal.entrypoints=websecure"
-      - "traefik.http.routers.signal.tls.certresolver=letsencrypt"
-      - "traefik.http.services.signal.loadbalancer.server.port=8080"
 
 volumes:
   signal_cli_data:
