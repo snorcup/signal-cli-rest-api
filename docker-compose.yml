@@ -10,11 +10,11 @@ services:
     volumes:
       - signal_cli_data:/home/.local/share/signal-cli
     labels:
-      - traefik.enable: "true"
-      - traefik.http.routers.signal.rule: "Host(`signal.51fifty.io`)"
-      - traefik.http.routers.signal.entrypoints: "websecure"
-      - traefik.http.routers.signal.tls.certresolver: "letsencrypt"
-      - traefik.http.services.signal.loadbalancer.server.port: "8085"
+      traefik.enable: "true"
+      traefik.http.routers.signal.rule: "Host(`signal.51fifty.io`)"
+      traefik.http.routers.signal.entrypoints: "websecure"
+      traefik.http.routers.signal.tls.certresolver: "letsencrypt"
+      traefik.http.services.signal.loadbalancer.server.port: "8085"
     environment:
       - MODE=json-rpc
       - PORT=8085
