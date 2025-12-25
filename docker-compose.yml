@@ -11,6 +11,7 @@ services:
       - signal_cli_data:/home/.local/share/signal-cli
     environment:
       - MODE=json-rpc
+      - PORT=8085
 
 volumes:
   signal_cli_data:
