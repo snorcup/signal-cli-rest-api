@@ -21,3 +21,7 @@ services:
 
 volumes:
   signal_cli_data:
+
+networks:
+  easypanel:
+    external: true
